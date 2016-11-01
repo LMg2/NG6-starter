@@ -1,6 +1,13 @@
 class AboutController {
   constructor() {
-    this.name = 'about';
+    this.title = 'about';
+    this.people = [];
+    for (let i = 0; i < 15; i++) {
+      this.people.push({
+        name: "Min Li Chan",
+        notes: "A note."
+      });
+    }
   }
 }
 
