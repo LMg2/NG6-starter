@@ -1,16 +1,64 @@
 <div class="home" layout="column" style="height:100vh" ng-cloak>
     <md-toolbar>
-        <div class="md-toolbar-tools">
-            <h3>
-        <span>{{$ctrl.title}}</span>
-      </h3>
-        </div>
+        <header class="md-toolbar-tools">
+            <md-menu md-offset="0 40">
+                <md-button class="md-icon-button md-primary" aria-label="menu" ng-click="$mdOpenMenu($event)">
+                    <md-icon class="menu-icon material-icons">dehaze</md-icon>
+                </md-button>
+                <md-menu-content width="5">
+                    <md-menu-item>
+                        <md-button ">
+                            <div layout="row " flex>
+                                <p flex>Configuración</p>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-divider></md-menu-divider>
+                    <md-menu-item >
+                        <md-button ">
+                            <div layout="row" flex>
+                                <p flex>Cerrar Sesión</p>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <h2>
+                <span>Regatas App</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-offset="-50 40" md-position-mode="target-right target">
+                <md-button aria-label="User menu" class="md-fab md-mini md-accent" ng-click="$mdOpenMenu($event)">
+                    <md-icon md-svg-icon="app/img/user.svg"></md-icon>
+                </md-button>
+                <md-menu-content width="3">
+                    <md-menu-item>
+                        <md-button ">
+                            <div layout="row " flex>
+                                <p flex>Configuración</p>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-divider></md-menu-divider>
+                    <md-menu-item >
+                        <md-button ">
+                            <div layout="row" flex>
+                                <p flex>Cerrar Sesión</p>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <span>Usuario</span>
+        </header>
     </md-toolbar>
     <md-content flex>
-        <main >
-            <div>
+        <main layout="row">
+            <nav>
+            </nav>
+            <section>
                 <h1>Found in {{ $ctrl.title }}.html</h1>
-            </div>
+            </section>
         </main>
     </md-content>
 </div>
