@@ -33,11 +33,8 @@ angular.module('app', [
         'hue-2': '600',
         'hue-3': 'A100'
       })
-      .accentPalette('green', {
-        'default': '600', 
-        'hue-1': '100', 
-        'hue-2': '600',
-        'hue-3': 'A100'
+      .accentPalette('grey', {
+        'default': '600'
       })
       .backgroundPalette('grey', {
         'default': '300'

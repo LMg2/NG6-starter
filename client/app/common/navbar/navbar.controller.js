@@ -8,7 +8,9 @@ class NavbarController {
     if (state === 'app.about') {
       this.title = 'About';
     }else if (state === 'app.inscription') {
-      this.title = 'Inscripción a Campeonatos';
+      this.title = 'Inscripción a Campeonato';
+    }else if (state === 'app.championships') {
+      this.title = 'Próximos Campeonatos';
     }
   }
 }
