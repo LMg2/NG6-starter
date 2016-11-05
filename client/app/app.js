@@ -4,12 +4,13 @@ import angularAria from 'angular-aria';
 import angularAnimate from 'angular-animate';
 import angularMaterial from 'angular-material';
 
-import Common from './common/common';
-import Components from './components/components';
-import AppComponent from './app.component';
 import 'normalize.css';
 import 'angular-material/angular-material.css';
 import 'material-design-icons/iconfont/material-icons.css';
+
+import Common from './common/common';
+import Components from './components/components';
+import AppComponent from './app.component';
 
 angular.module('app', [
     uiRouter,

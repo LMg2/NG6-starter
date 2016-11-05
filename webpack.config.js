@@ -15,6 +15,9 @@ module.exports = {
       { test: /\.(svg|woff|woff2|ttf|eot)$/, loader: 'file?name=[name].[hash].[ext]' }
     ]
   },
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, "./client")]
+  },
   plugins: [
     // Injects bundles in your index.html instead of wiring all manually.
     // It also adds hash to all injected assets so we don't have problems

@@ -1,3 +1,27 @@
-.home{
-
+@import "app/common/variables";
+.home {
+    background-color: $primary-color;
+    color: white;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .landing {
+        width: 80vw;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        h1 {
+            font-size: 5em;
+        }
+        .app-title,
+        .app-desc {
+            flex: 1 80%;
+            text-align: center;
+        }
+    }
 }
