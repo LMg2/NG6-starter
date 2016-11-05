@@ -1,22 +1,61 @@
-<div layout="column" style="height:100vh" ng-cloak>
-    <md-toolbar>
-        <div class="md-toolbar-tools">
-            <h3>
-        <span>{{$ctrl.title}}</span>
-      </h3>
-        </div>
-    </md-toolbar>
-    <md-content flex>
-        <md-list>
-            <md-list-item class="md-2-line" ng-repeat="item in $ctrl.people">
-                <div class="md-list-item-text">
-                    <h3>{{item.name}}</h3>
-                    <p>
-                        {{item.notes}}
-                    </p>
-                </div>
-                <md-divider inset></md-divider>
-            </md-list-item>
-        </md-list>
-    </md-content>
-</div>
+<md-content class="about">
+    <md-card class="info">
+        <md-card-title>
+            <md-card-title-text>
+                <md-list flex>
+                    <span class="md-headline">Ingeniería del Software II</span>
+                    <md-subheader class="md-no-sticky">2º Cuatrimestre 2016</md-subheader>
+                    <span class="md-subhead"></span>
+                    <span class="md-headline">Docente</span>
+                    <md-list-item class="md-2-line">
+                        <img src="app/img/user.svg" class="md-avatar" alt="Raúl Hernan Lopez" />
+                        <div class="md-list-item-text">
+                            <h3>Raul Hernan Lopez</h3>
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </md-card-title-text>
+            <md-card-title-media class="list">
+                <md-list flex>
+                    <span class="md-headline">Los Magios 2</span>
+                    <md-subheader class="md-no-sticky">Integrantes</md-subheader>
+                    <md-list-item class="md-2-line">
+                        <img src="app/img/user.svg" class="md-avatar" alt="Claudio Banderbek" />
+                        <div class="md-list-item-text">
+                            <h3>Claudio Banderbek</h3>
+                            <p>875857</p>
+                        </div>
+                    </md-list-item>
+                    <md-list-item class="md-2-line">
+                        <img src="app/img/user.svg" class="md-avatar" alt="Mario Madera" />
+                        <div class="md-list-item-text">
+                            <h3>Mario Madera</h3>
+                            <p>945455</p>
+                        </div>
+                    </md-list-item>
+                    <md-list-item class="md-2-line">
+                        <img src="app/img/user.svg" class="md-avatar" alt="Agustin Pivetta" />
+                        <div class="md-list-item-text">
+                            <h3>Agustin Pivetta</h3>
+                            <p>992850</p>
+                        </div>
+                    </md-list-item>
+                    <md-list-item class="md-2-line">
+                        <img src="app/img/user.svg" class="md-avatar" alt="Pablo Rossi" />
+                        <div class="md-list-item-text">
+                            <h3>Pablo Rossi</h3>
+                            <p>959062</p>
+                        </div>
+                    </md-list-item>
+                    <md-list-item class="md-2-line">
+                        <img src="app/img/user.svg" class="md-avatar" alt="Daniela Thea" />
+                        <div class="md-list-item-text">
+                            <h3>Daniela Thea</h3>
+                            <p>965067</p>
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </md-card-title-media>
+        </md-card-title>
+    </md-card>
+</md-content>
