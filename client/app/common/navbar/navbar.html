@@ -7,18 +7,18 @@
                 </md-button>
                 <md-menu-content width="5">
                     <md-menu-item>
-                        <md-button flex ui-sref="app.home">Home</md-button>
+                        <md-button flex ng-click="$ctrl.updateTitle('app.home')" ui-sref="app.home">Home</md-button>
                     </md-menu-item>
                     <md-menu-item>
-                        <md-button flex ui-sref="app.inscripcion">Inscripción a Campeonatos</md-button>
+                        <md-button flex ng-click="$ctrl.updateTitle('app.inscription')"ui-sref="app.inscription">Inscripción a Campeonatos</md-button>
                     </md-menu-item>
                     <md-menu-item >
-                        <md-button flex ui-sref="app.about">About</md-button>
+                        <md-button flex ng-click="$ctrl.updateTitle('app.about')"ui-sref="app.about">About</md-button>
                     </md-menu-item>
                 </md-menu-content>
             </md-menu>
             <h2>
-                <span>Regatas App</span>
+                <span>{{$ctrl.title}}</span>
             </h2>
             <span flex></span>
             <md-menu md-offset="-50 40 " md-position-mode="target-right target ">

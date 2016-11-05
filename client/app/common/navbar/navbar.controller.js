@@ -1,7 +1,16 @@
 class NavbarController {
-  constructor() {
-    this.name = 'navbar';
+  constructor(state) {
+    this.updateTitle(state.current.name);
+  }
+
+  updateTitle(state) {
+    this.title = '';
+    if (state === 'app.about') {
+      this.title = 'About';
+    }else if (state === 'app.inscription') {
+      this.title = 'Inscripción a Campeonatos';
+    }
   }
 }
 
-export default NavbarController;
+export default ['$state', NavbarController];

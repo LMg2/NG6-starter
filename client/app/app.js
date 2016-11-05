@@ -37,6 +37,9 @@ angular.module('app', [
         'hue-1': '100', 
         'hue-2': '600',
         'hue-3': 'A100'
+      })
+      .backgroundPalette('grey', {
+        'default': '300'
       });
   })
 
