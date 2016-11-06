@@ -1,3 +1,41 @@
-<div>
-  <h1>{{ $ctrl.name }}</h1>
-</div>
+<md-content class="inscriptions">
+    <md-card class="form" flex="60" flex-sm="100">
+        <md-card-header>
+            <md-card-header-text>
+                <span class="md-title">Inscripción</span>
+            </md-card-header-text>
+        </md-card-header>
+        <md-card-content>
+            <form name="inscription" class="inscription-form">
+                <md-input-container class="md-block" flex>
+                    <label>Campeonato</label>
+                    <input name="championship" ng-model="$ctrl.form.championship" ng-readonly="true">
+                </md-input-container>
+                <md-input-container class="md-block" flex>
+                    <label>Nombre</label>
+                    <input name="firstName" ng-model="$ctrl.form.firstName" required>
+                </md-input-container>
+                <md-input-container class="md-block" flex>
+                    <label>Apellido</label>
+                    <input name="lastName" ng-model="$ctrl.form.lastName" required>
+                </md-input-container>
+                <md-input-container class="md-block" flex>
+                    <label>Clase de Barco</label>
+                    <md-select name="boatClass" ng-model="$ctrl.form.boatClass" required>
+                        <md-option ng-repeat="boatClass in $ctrl.boatClasses" value="{{boatClass.name}}">
+                            {{boatClass.name}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container class="md-block" flex>
+                    <label>Número de Vela de Barco</label>
+                    <input name="boatClass" ng-model="$ctrl.form.boatNumber" required>
+                </md-input-container>
+                <div layout="row" layout-align="end" flex>
+                    <md-button ng-click="$ctrl.resetForm()" ng-disabled="!inscription.$dirty">Limpiar Formulario</md-button>
+                    <md-button ng-click="$ctrl.save()" ng-disabled="inscription.$invalid" class="md-primary">Inscribirme</md-button>
+                </div>
+            </form>
+        </md-card-content>
+    </md-card>
+</md-content>

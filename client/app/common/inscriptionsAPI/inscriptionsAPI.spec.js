@@ -1,14 +1,14 @@
-import ChampionshipsModule from './championships';
-import ChampionshipsFactory from './championships.factory';
+import InscriptionsAPIModule from './inscriptionsAPI';
+import InscriptionsAPIFactory from './inscriptionsAPI.factory';
 
-describe('Championships', () => {
+describe('InscriptionsAPI', () => {
   let $rootScope, makeFactory;
 
-  beforeEach(window.module(ChampionshipsModule));
+  beforeEach(window.module(InscriptionsAPIModule));
   beforeEach(inject((_$rootScope_) => {
     $rootScope = _$rootScope_;
     makeFactory = () => {
-      return ChampionshipsFactory();
+      return new InscriptionsAPIFactory();
     };
   }));
 

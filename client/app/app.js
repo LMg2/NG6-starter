@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import angularAria from 'angular-aria';
+import angularResource from 'angular-resource';
 import angularAnimate from 'angular-animate';
 import angularMaterial from 'angular-material';
 
@@ -13,6 +14,7 @@ import Components from './components/components';
 import AppComponent from './app.component';
 
 angular.module('app', [
+    angularResource,
     uiRouter,
     angularAnimate,
     angularAria,
