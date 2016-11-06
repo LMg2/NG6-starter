@@ -1,7 +1,9 @@
 class InscriptionsController {
   constructor($scope, $state, $stateParams, $mdToast, championshipsFactory, inscriptionsAPI) {
     this.scope = $scope;
+    this.state = $state;
     this.mdToast = $mdToast;
+    this.API = inscriptionsAPI;
     this.championship = championshipsFactory.get($stateParams.championshipId) || {};
     this.boatClasses = [{
       name: 'Laser',
@@ -14,21 +16,19 @@ class InscriptionsController {
       crew: 2
     }]
 
-    this.validateChampionship($state);
+    this.validateChampionship();
     this.resetForm();
-
-    //inscriptionsAPI.query(data => console.log(data));
   }
 
-  validateChampionship($state) {
+  validateChampionship() {
     if (this.championship.id === undefined) {
       //rechaza inscribirse a campeonatos inexistentes
       this.errorToast('El campeonato no existe.');
-      $state.go('app.championships');
+      this.state.go('app.championships');
     } else if (!this.championship.enabled) {
       //rechaza inscribirse a campeonatos no habilitados
       this.errorToast('Aún no está habilitada la inscripción a este campeonato.');
-      $state.go('app.championships');
+      this.state.go('app.championships');
     }
   }
 
@@ -53,9 +53,36 @@ class InscriptionsController {
     }
     this.mdToast.show(toast);
   }
+
+  successToast(text) {
+    const toast = {
+      template: `<md-toast class="md-capsule">
+          <div class="md-toast-content">
+            <i class="material-icons">done</i> 
+            <span>${text}</span>
+          </div>
+        </md-toast>`,
+      toastClass: 'success-toast'
+    }
+    this.mdToast.show(toast);
+  }
+
   save() {
     if (!this.scope.inscription.$invalid) {
-      this.errorToast('La relación Clase de barco - Numero de vela ya existe para el campeonato seleccionado.');
+      const params = {
+        IdCampeonato: this.form.championship,
+        Nombre: this.form.firstName,
+        Apellido: this.form.lastName,
+        ClaseBarco: this.form.boatClass,
+        NumeroVela: this.form.boatNumber
+      }
+      console.log(params);
+      this.API.save(params, data => {
+        this.successToast('Inscripción realizada.');
+        this.state.go('app.home');
+      }, error => {
+        this.errorToast('La relación Clase de barco - Numero de vela ya existe para el campeonato seleccionado.');
+      });
     };
   }
 }

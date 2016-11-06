@@ -31,12 +31,14 @@
         .cards {
             margin: 100px 0;
             display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 100vw;
             .feature {
-            	cursor: pointer;
+                cursor: pointer;
                 color: rgb(117, 117, 117);
                 min-width: 300px;
-                margin: 0 40px;
-                flex: 1 100%;
+                
                 text-align: center;
                 i {
                     font-size: 5em;

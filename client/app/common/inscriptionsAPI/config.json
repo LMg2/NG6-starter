@@ -1,4 +1,4 @@
 {
-	"baseUrl": "http://magios.somee.com/api/Inscripcion/",
+	"baseUrl": "http://magiosdos.somee.com/api/Inscripcion/",
 	"parameters": ":boatClass/:boatNumber"
 }
