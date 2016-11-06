@@ -1,4 +1,4 @@
-import InscriptionsModule from './inscriptions'
+import InscriptionsModule from './inscriptions';
 import InscriptionsController from './inscriptions.controller';
 import InscriptionsComponent from './inscriptions.component';
 import InscriptionsTemplate from './inscriptions.html';

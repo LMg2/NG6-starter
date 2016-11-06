@@ -1,4 +1,4 @@
-import NavbarModule from './navbar'
+import NavbarModule from './navbar';
 import NavbarController from './navbar.controller';
 import NavbarComponent from './navbar.component';
 import NavbarTemplate from './navbar.html';
@@ -29,8 +29,8 @@ describe('Navbar', () => {
   describe('Template', () => {
     // template specs
     // tip: use regex to ensure correct bindings are used e.g., {{  }}
-    it('has name in template [REMOVE]', () => {
-      expect(NavbarTemplate).to.match(/{{\s?\$ctrl\.name\s?}}/g);
+    it('has title in template', () => {
+      expect(NavbarTemplate).to.match(/{{\s?\$ctrl\.title\s?}}/g);
     });
   });
 

@@ -6,6 +6,15 @@ let inscriptionsModule = angular.module('inscriptions', [
   uiRouter
 ])
 
+.config(($stateProvider) => {
+  "ngInject";
+  $stateProvider
+    .state('app.inscription', {
+      url: '/inscription/{championshipId}',
+      component: 'inscriptions'
+    });
+})
+
 .component('inscriptions', inscriptionsComponent)
 
 .name;

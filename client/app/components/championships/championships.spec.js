@@ -1,4 +1,4 @@
-import ChampionshipsModule from './championships'
+import ChampionshipsModule from './championships';
 import ChampionshipsController from './championships.controller';
 import ChampionshipsComponent from './championships.component';
 import ChampionshipsTemplate from './championships.html';

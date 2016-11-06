@@ -1,3 +1,14 @@
 .championships {
-  color: red;
+    width: 100vw;
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    .upcoming {
+        display: flex;
+        justify-content: center;
+        .md-table{
+        	width: 100%;        	
+        }
+    }
 }
