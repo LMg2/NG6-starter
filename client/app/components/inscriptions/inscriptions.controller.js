@@ -2,7 +2,7 @@ class InscriptionsController {
   constructor($scope, $state, $stateParams, $mdToast, championshipsFactory, inscriptionsAPI) {
     this.scope = $scope;
     this.mdToast = $mdToast;
-    this.championship = championshipsFactory.get($stateParams.championshipId);
+    this.championship = championshipsFactory.get($stateParams.championshipId) || {};
     this.boatClasses = [{
       name: 'Laser',
       crew: 1
@@ -13,15 +13,23 @@ class InscriptionsController {
       name: '29er',
       crew: 2
     }]
+
+    this.validateChampionship($state);
     this.resetForm();
 
-    //rechaza inscribirse a campeonatos inexistentes
-    if (this.championship === undefined) {
+    //inscriptionsAPI.query(data => console.log(data));
+  }
+
+  validateChampionship($state) {
+    if (this.championship.id === undefined) {
+      //rechaza inscribirse a campeonatos inexistentes
+      this.errorToast('El campeonato no existe.');
+      $state.go('app.championships');
+    } else if (!this.championship.enabled) {
+      //rechaza inscribirse a campeonatos no habilitados
+      this.errorToast('Aún no está habilitada la inscripción a este campeonato.');
       $state.go('app.championships');
     }
-
-
-    //inscriptionsAPI.query(data => console.log(data));
   }
 
   resetForm() {
@@ -33,22 +41,21 @@ class InscriptionsController {
     }
   }
 
+  errorToast(text) {
+    const toast = {
+      template: `<md-toast class="md-capsule">
+          <div class="md-toast-content">
+            <i class="material-icons">report_problem</i> 
+            <span>${text}</span>
+          </div>
+        </md-toast>`,
+      toastClass: 'error-toast'
+    }
+    this.mdToast.show(toast);
+  }
   save() {
     if (!this.scope.inscription.$invalid) {
-      /*const toast = this.mdToast.simple()
-        .textContent('La relación Clase de barco - Numero de vela ya existe para el campeonato seleccionado.')
-        .capsule(true)
-        .toastClass('error-toast');*/
-      const toast = {
-      	template: `<md-toast class="md-capsule">
-      	  <div class="md-toast-content">
-      	    <i class="material-icons">report_problem</i> 
-      	    <span>La relación Clase de barco - Numero de vela ya existe para el campeonato seleccionado.</span>
-      	  </div>
-		</md-toast>`,
-		toastClass: 'error-toast'
-      }
-      this.mdToast.show(toast);
+      this.errorToast('La relación Clase de barco - Numero de vela ya existe para el campeonato seleccionado.');
     };
   }
 }

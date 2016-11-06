@@ -6,6 +6,9 @@
     justify-content: center;
     .inscription-form {
         font-size: 1.5em;
+        fieldset {
+            border: 1px solid #FFF;
+        }
     }
 }
 
