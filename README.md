@@ -65,7 +65,7 @@ Herramientas necesarias para correr la aplicación:
 Una vez instalado node, instalar los siguientes paquetes globales:  
 `npm install -g gulp karma karma-cli webpack`
 
-## Installing
+## Instalando
 * `clone` este repositorio
 * `npm install -g gulp karma karma-cli webpack` instalar dependencias globales (paso anterior)
 * `npm install` en la carpeta raiz del repositorio para instalar dependencias locales
