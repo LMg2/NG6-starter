@@ -2,6 +2,7 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import angularAria from 'angular-aria';
 import angularResource from 'angular-resource';
+import angularMessages from 'angular-messages';
 import angularAnimate from 'angular-animate';
 import angularMaterial from 'angular-material';
 
@@ -18,6 +19,7 @@ angular.module('app', [
     uiRouter,
     angularAnimate,
     angularAria,
+    angularMessages,
     angularMaterial,
     Common,
     Components

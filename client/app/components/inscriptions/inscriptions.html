@@ -14,11 +14,19 @@
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                         <label>Nombre</label>
-                        <input name="firstName" ng-model="$ctrl.form.firstName" required>
+                        <input name="firstName" ng-model="$ctrl.form.firstName" required ng-pattern="$ctrl.patterns.name">
+                        <div ng-messages="inscription.firstName.$error">
+                            <div ng-message="required">Campo Obligatorio</div>
+                            <div ng-message="pattern">Máximo 40 caracteres</div>
+                        </div>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                         <label>Apellido</label>
-                        <input name="lastName" ng-model="$ctrl.form.lastName" required>
+                        <input name="lastName" ng-model="$ctrl.form.lastName" required ng-pattern="$ctrl.patterns.name">
+                        <div ng-messages="inscription.lastName.$error">
+                            <div ng-message="required">Campo Obligatorio</div>
+                            <div ng-message="pattern">Máximo 40 caracteres</div>
+                        </div>
                     </md-input-container>
                     <md-input-container class="md-block" flex>
                         <label>Clase de Barco</label>
@@ -30,7 +38,11 @@
                     </md-input-container>
                     <md-input-container class="md-block boat-number" flex>
                         <label>Número de Vela de Barco</label>
-                        <input name="boatClass" ng-model="$ctrl.form.boatNumber" required>
+                        <input name="boatClass" ng-model="$ctrl.form.boatNumber" required ng-pattern="$ctrl.patterns.boatNumber">
+                        <div ng-messages="inscription.boatNumber.$error">
+                            <div ng-message="required">Campo Obligatorio</div>
+                            <div ng-message="pattern">El campo debe tener menos de 15 caracteres alfanumericos sin espacio</div>
+                        </div>
                     </md-input-container>
                 </fieldset>
                 <div layout="row" layout-align="end" flex>

@@ -16,6 +16,11 @@ class InscriptionsController {
       crew: 2
     }]
 
+    this.patterns = {
+      boatNumber: '^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚ]{1,15}$', //alfanumerico de 15 
+      name: '^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,40}$', //Alfa de 40 con espacios
+    }
+
     this.validateChampionship();
     this.resetForm();
   }
